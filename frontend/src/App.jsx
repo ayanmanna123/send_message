@@ -15,19 +15,19 @@ function App() {
              process.env.REACT_APP_VAPID_PUBLIC_KEY
           ),
         });
-        await axios.post("http://localhost:5000/subscribe", subscription);
+        await axios.post("https://send-message-hrni.vercel.app/subscribe", subscription);
       });
     }
   }, []);
 
   const setTimer = async () => {
     // Register email
-    await axios.post("http://localhost:5000/register-email", {
+    await axios.post("https://send-message-hrni.vercel.app/register-email", {
       email: "ayanmanna858@gmail.com",
     });
 
     // Tell backend to start timer
-    await axios.post("http://localhost:5000/set-timer", {
+    await axios.post("https://send-message-hrni.vercel.app/set-timer", {
       minutes,
       message,
     });
